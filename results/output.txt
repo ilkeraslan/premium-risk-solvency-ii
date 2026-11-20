@@ -1,0 +1,238 @@
+
+==============================================================================
+DATA
+==============================================================================
+calendar year: n = 30, 1996-2025, mean 101.56, sd 5.268
+accident year: n = 20, 1996-2015, mean 103.13, sd 5.624
+corr(CY, AY) on 1996-2015: 0.070
+corr(CY_t, AY_t-2): -0.434
+
+==============================================================================
+AR(2), Cummins-Outreville tradition
+==============================================================================
+const 36.9  a1 0.864  a2 -0.229
+complex roots; implied cycle period 14.1 years
+
+==============================================================================
+TWO-REGIME MARKOV SWITCHING, CALENDAR YEAR (Table 2, panel A)
+==============================================================================
+log L -83.827   AIC 179.65   BIC 188.06   k = 6
+soft:  mu 108.37  sd 4.426
+hard:  mu 99.43  sd 3.175
+p_SS 0.935  p_HH 0.968   implied durations 15.5, 31.4 years   ergodic P(soft) 0.330
+years with smoothed P(soft) > 0.5: [1996, 1997, 1998, 1999, 2000, 2001, 2002]
+smoothed P(soft): 1996:0.96 1997:0.96 1998:0.99 1999:1.00 2000:1.00 2001:1.00 2002:0.98 2003:0.17 2004:0.02 2005:0.00 2006:0.00 2007:0.00 2008:0.00 2009:0.00 2010:0.01 2011:0.03 2012:0.01 2013:0.00 2014:0.00 2015:0.00 2016:0.00 2017:0.00 2018:0.00 2019:0.00 2020:0.00 2021:0.00 2022:0.00 2023:0.00 2024:0.00 2025:0.00
+degenerate spike (2001 alone, sd -> 0): log L -82.5 -> unbounded; constrained interior maximum used
+
+==============================================================================
+MODEL COMPARISON, CALENDAR YEAR (Table 2, panel C)
+==============================================================================
+specification                           log L   k      AIC      BIC   estimates
+one regime (i.i.d. normal)             -91.91   2   187.82   190.62   mu 101.56, sd 5.18
+two regimes, common variance           -84.44   5   178.89   185.89   mu 108.54/99.46, sd 3.49
+two regimes, switching variance        -83.83   6   179.65   188.06   mu 108.37/99.43, sd 4.43/3.18
+three regimes, switching variance      -81.60  12   187.19   204.01   mu 108.4/100.2/93.6, sd 4.40/2.45/0.80
+LR, common vs switching variance: 1.23 on 1 df, p = 0.267
+common-variance capital: break-even soft 17.53 hard 9.00; unexpected-loss both 9.00
+
+==============================================================================
+CAPITAL AT THE 99.5% STANDARD (Table 1)
+==============================================================================
+state                           mean     sd  UL z*sd  break-even  ratio BE  ratio UL
+unconditional (static)        101.56  5.268    13.57       15.13      1.00      1.00
+soft regime                   108.37  4.426    11.40       19.77     1.307     0.840
+hard/moderate regime           99.43  3.175     8.18        8.18     0.541     0.603
+3-sigma rule on the sample coefficient of variation: 15.56
+static as % of soft-state break-even requirement: 76.5% (shortfall 23.5%)
+static as % of hard-state requirement: 185%
+variance decomposition at smoothed frequencies (w = 0.238): within 12.3 + between 14.5 = 26.8; between share 54%
+
+==============================================================================
+DISTRIBUTIONAL SENSITIVITY AT 99.5% (Table A1)
+==============================================================================
+lognormal quantile factor f(sigma)/sigma at sigma=0.10: 2.87; at sigma=0.17: 3.08
+distribution      soft BE  hard BE  static BE soft/static  soft UL  hard UL
+Gaussian            19.77     8.18      15.13       1.307    11.40     8.18
+lognormal           20.29     8.47      15.91       1.275    11.92     8.47
+Student t(10)       20.92     9.00      16.49       1.268    12.55     9.00
+Student t(7)        21.46     9.39      17.14       1.252    13.09     9.39
+Student t(5)        22.19     9.92      18.01       1.232    13.82     9.92
+Student t(4)        22.78    10.34      18.71       1.218    14.41    10.34
+
+==============================================================================
+ACCIDENT-YEAR ESTIMATES (Table 4)
+==============================================================================
+log L -56.841; soft mu 107.47 sd 3.373; hard mu 98.18 sd 2.322
+p_SS 0.841 p_HH 0.810; ergodic P(soft) 0.544
+years with smoothed P(soft) > 0.5: [2000, 2001, 2002, 2003, 2004, 2005, 2012, 2013, 2014, 2015]
+regime mean spread: CY 8.94, AY 9.29
+AY capital: static BE 17.62, soft BE 16.16, hard BE 5.98; soft/static 0.917
+AY capital UL: static 14.49, soft 8.69, hard 5.98
+CY on the same 1996-2015 window: soft mu 108.37 sd 4.44; hard mu 99.43 sd 3.36; spread 8.94
+
+==============================================================================
+LLOYD'S OF LONDON: CALENDAR-YEAR AND ATTRITIONAL ACCIDENT-YEAR SERIES (Table 4, Fig. 3)
+==============================================================================
+calendar-year combined ratio 2002-2025: n = 24, mean 94.64, sd 9.23
+accident-year ratio excl. major claims 2008-2025: n = 18, mean 89.29, sd 5.22
+
+calendar year: switching variance log L -81.18 (BIC 181.43); common variance log L -81.82 (BIC 179.53); one regime BIC 180.12; LR 1.28
+  soft mu 102.37 sd 7.57 | hard/moderate mu 88.21 sd 3.30 | spread 14.16 | common-variance means 107.40/89.89 sd 4.59
+  p_SS 0.706 p_HH 0.752; soft years [2002, 2003, 2004, 2005, 2011, 2016, 2017, 2018, 2019, 2020]
+  variance decomposition at smoothed frequencies (w = 0.454): within 32.0 + between 49.7 = 81.6; between share 61%
+  capital, unexpected-loss basis: static 23.77, soft 19.49, hard/moderate 8.50; soft/static 0.820, hard/static 0.358
+
+attritional accident year: switching variance log L -48.35 (BIC 114.04); common variance log L -48.72 (BIC 111.89); one regime BIC 115.35; LR 0.74
+  soft mu 95.37 sd 1.93 | hard/moderate mu 86.24 sd 3.00 | spread 9.13 | common-variance means 94.89/86.02 sd 2.73
+  p_SS 0.799 p_HH 0.931; soft years [2014, 2015, 2016, 2017, 2018, 2019]
+  variance decomposition at smoothed frequencies (w = 0.334): within 7.2 + between 18.5 = 25.8; between share 72%
+  capital, unexpected-loss basis: static 13.46, soft 4.97, hard/moderate 7.73; soft/static 0.369, hard/static 0.575
+
+stationary block bootstrap of the attritional series (B = 1000): spread median 8.41, 95% [5.12, 11.68], P(spread > 2) = 0.992; sd(S) - sd(H) median -0.10, 95% [-2.49, 3.38]
+figure written: fig3_lloyds.png
+
+==============================================================================
+REINSURANCE DECOMPOSITION (Table 5)
+==============================================================================
+channel A, break-even basis: static 15.13 vs soft 19.77: static is 76.5% of requirement
+channel A, unexpected-loss basis: static 13.57 vs soft 11.40: static is 119.0% of requirement
+scenario                                      volume   BE gap   UL gap
+index -16%, limit unchanged, year 2 onward     -16.0     35.7      0.0
+index -16%, limit +5%, year 2 onward           -11.8     32.5     -5.0
+index -16%, limit +10%, year 2 onward           -7.6     29.3    -10.0
+index -12%, limit +5%, year 2 onward            -7.6     29.3    -10.0
+any of the above, year 1 (Art. 116(3) floor)     0.0     23.5    -19.0
+
+figures written: fig1_regimes.png, fig2_ay_cy.png
+
+==============================================================================
+PROFILE LIKELIHOOD OVER (p_SS, p_HH) (Table 2, panel B)
+==============================================================================
+grid maximum log L -83.85 at p_SS 0.96, p_HH 0.93
+95% profile region: p_SS in [0.60, 0.99], p_HH in [0.60, 0.99]
+implied durations in region: soft 2.5-100 yrs, hard 2.5-100 yrs
+conditional moments across the region: mu(S) [107.29, 109.60], mu(H) [99.11, 99.76], sd(S) [4.16, 4.70], sd(H) [2.98, 3.36]
+(132s)
+
+==============================================================================
+BOOTSTRAP (Table 3)
+==============================================================================
+
+parametric (B = 998):
+  mu_s         median  107.724   95% [  99.544,  113.446]
+  mu_h         median   99.117   95% [  94.395,  106.744]
+  sd_s         median    3.125   95% [   0.308,    6.159]
+  sd_h         median    2.723   95% [   0.382,    4.676]
+  spread       median    7.871   95% [   0.788,   12.641]
+  be_s         median   16.152   95% [   3.479,   24.805]
+  be_h         median    7.165   95% [   1.027,   17.148]
+  ratio_be_s   median    0.975   95% [   0.422,    1.723]
+  ratio_be_h   median    0.507   95% [   0.100,    1.101]
+  ratio_ul_s   median    0.672   95% [   0.089,    1.302]
+  P(soft break-even requirement > static) = 0.443;  P(soft UL requirement > static UL) = 0.117
+  (217s)
+
+parametric, start soft (B = 998):
+  mu_s         median  109.016   95% [ 102.178,  114.666]
+  mu_h         median   99.687   95% [  97.113,  107.881]
+  sd_s         median    3.597   95% [   0.535,    6.153]
+  sd_h         median    2.941   95% [   0.670,    5.516]
+  spread       median    8.620   95% [   1.993,   12.784]
+  be_s         median   18.363   95% [   9.417,   25.609]
+  be_h         median    7.902   95% [   2.626,   19.461]
+  ratio_be_s   median    0.984   95% [   0.677,    1.792]
+  ratio_be_h   median    0.475   95% [   0.152,    0.991]
+  ratio_ul_s   median    0.690   95% [   0.108,    1.255]
+  P(soft break-even requirement > static) = 0.459;  P(soft UL requirement > static UL) = 0.089
+  (282s)
+
+stationary block (B = 995):
+  mu_s         median  108.683   95% [ 100.108,  112.258]
+  mu_h         median   99.506   95% [  93.785,  100.971]
+  sd_s         median    3.981   95% [   0.919,    6.767]
+  sd_h         median    3.135   95% [   0.308,    4.439]
+  spread       median    9.003   95% [   0.775,   12.691]
+  be_s         median   20.012   95% [   6.090,   24.381]
+  be_h         median    8.145   95% [   0.794,   11.789]
+  ratio_be_s   median    1.183   95% [   0.654,    1.838]
+  ratio_be_h   median    0.516   95% [   0.085,    0.851]
+  ratio_ul_s   median    0.759   95% [   0.248,    1.380]
+  P(soft break-even requirement > static) = 0.825;  P(soft UL requirement > static UL) = 0.183
+  (365s)
+
+==============================================================================
+SIMULATED COVERAGE STUDY (Table 6)
+==============================================================================
+price soft 91.75 vs hard 100 (softening 8.2%); implied mu(S) 108.37, sd(S) 3.46; ergodic P(soft) 0.385
+simulated CR mean 102.88 sd 5.46; sigma_hat 0.0546; reference price 96.74
+
+best estimate at break-even (b = 100)
+  rule                                         all    soft    hard  avg cap
+  standard formula, premium volume          0.405%  1.049%  0.000%    15.85
+  exposure-corrected volume V*              0.198%  0.512%  0.000%    15.84
+  state-conditional requirement             0.371%  0.503%  0.287%    11.15
+
+best estimate state-conditioned (b = mu(r))
+  rule                                         all    soft    hard  avg cap
+  standard formula, premium volume          0.000%  0.000%  0.000%    15.85
+  exposure-corrected volume V*              0.000%  0.000%  0.000%    15.84
+  state-conditional requirement             0.499%  0.503%  0.496%     8.18
+  (365s)
+
+==============================================================================
+CAPITAL-NEUTRAL CALIBRATION OF THE LOADING AND LEVEL DIAGNOSTIC (Table 7)
+==============================================================================
+indicator: c_S +0.0530  c_H -0.0331  (ergodic mean +7.0e-16)
+
+DGP A: price leverage only: sigma(S) 3.46, sigma(H) 3.18; pooled sigma_hat 0.0545; static charge 16.36 per 100 of premium
+  break-even (b = 100):
+    static rule                charge S  16.4 H  16.4  exceedance S 1.051% H <0.001%  avg capital 15.84
+    capital-neutral, equal     gamma 7.11 lambda 1.012  charge S  22.8 H  12.7  exceedance S 0.002% H 0.002% (z = 4.17)  avg capital 15.84
+    smallest capital-neutral loading meeting the soft-state target: gamma 1.04 (lambda 1.002)
+    memo, exact 0.5% coverage: lambda 0.693 gamma 9.92  targets S 17.28 H 7.61  avg capital 10.78 (-32% against static)
+  state-conditioned (b = mu(r)):
+    static rule                charge S  16.4 H  16.4  exceedance S <0.001% H <0.001%  avg capital 15.84
+    capital-neutral, equal     gamma 1.01 lambda 1.002  charge S  17.3 H  15.8  exceedance S <0.001% H <0.001% (z = 4.99)  avg capital 15.84
+    smallest capital-neutral loading meeting the soft-state target: gamma 0.00 (lambda 1.000)
+    memo, exact 0.5% coverage: lambda 0.517 gamma 1.01  targets S 8.91 H 8.18  avg capital 8.18 (-48% against static)
+
+DGP B: soft-state dispersion at its estimated value: sigma(S) 4.43, sigma(H) 3.18; pooled sigma_hat 0.0571; static charge 17.14 per 100 of premium
+  break-even (b = 100):
+    static rule                charge S  17.1 H  17.1  exceedance S 2.373% H <0.001%  avg capital 16.60
+    capital-neutral, equal     gamma 9.28 lambda 1.016  charge S  26.0 H  12.1  exceedance S 0.003% H 0.003% (z = 3.98)  avg capital 16.60
+    smallest capital-neutral loading meeting the soft-state target: gamma 2.79 (lambda 1.005)
+    memo, exact 0.5% coverage: lambda 0.717 gamma 11.50  targets S 19.77 H 7.61  avg capital 11.66 (-30% against static)
+  state-conditioned (b = mu(r)):
+    static rule                charge S  17.1 H  17.1  exceedance S 0.005% H <0.001%  avg capital 16.60
+    capital-neutral, equal     gamma 3.97 lambda 1.007  charge S  20.9 H  15.0  exceedance S <0.001% H <0.001% (z = 4.72)  avg capital 16.60
+    smallest capital-neutral loading meeting the soft-state target: gamma 0.00 (lambda 1.000)
+    memo, exact 0.5% coverage: lambda 0.549 gamma 3.97  targets S 11.40 H 8.18  avg capital 9.06 (-45% against static)
+
+==============================================================================
+REAL-TIME CHECK A: PRICE-INDEX RULE (8), BLS PRODUCER PRICE INDEX (Table 8, panel A)
+==============================================================================
+real price index (first year = 100): 1999:100.0 2000:97.9 2001:97.5 2002:100.0 2003:103.4 2004:104.0 2005:102.5 2006:99.9 2007:97.4 2008:95.0 2009:97.7 2010:97.7 2011:97.3 2012:97.6 2013:97.5 2014:97.3 2015:98.9 2016:100.2 2017:100.9 2018:100.8 2019:101.2 2020:101.4 2021:95.6 2022:90.2 2023:92.7 2024:97.2
+indicator (k = 7, cap 0.15): 2006:+0.008 2007:+0.033 2008:+0.058 2009:+0.026 2010:+0.022 2011:+0.019 2012:+0.006 2013:-0.000 2014:-0.001 2015:-0.018 2016:-0.025 2017:-0.028 2018:-0.023 2019:-0.022 2020:-0.019 2021:+0.046 2022:+0.101 2023:+0.061 2024:+0.002
+charges for 2007-2025 (n = 19); indicator positive in 11 years; mean indicator +0.0130; max +0.101 (2022), min -0.028 (2017)
+corr(indicator_t, CR_t+1) 0.16; mean CR_t+1 when indicator > 0: 99.64 (n = 11), otherwise 99.49 (n = 8); CR > 100 in 6 of 11 and 2 of 8 years
+rule                            exc 90%  exc 95%  exc 99.5%  mean 99.5%   range 99.5%  corr(charge, CR-100)
+static (gamma = 0)                    0        0          0       17.92    15.0-21.7                  0.14
+adjusted, gamma = 1                   0        0          0       18.12    15.0-22.3                  0.17
+adjusted, gamma = 4                   0        0          0       18.71    14.9-24.8                  0.20
+gamma = 1: mean 99.5% charge +1.1% against static; largest increase 1.4 points (2023); largest decrease -0.4 points (2018)
+gamma = 4: mean 99.5% charge +4.4% against static; largest increase 5.4 points (2023); largest decrease -1.6 points (2018)
+expected exceedances over 19 years: 90% 1.90, 95% 0.95, 99.5% 0.10
+window k = 5: charges for 2005-2025, corr(indicator_t, CR_t+1) 0.16, mean CR_t+1 100.40 when positive vs 98.43, mean indicator +0.0084
+window k = 10: charges for 2010-2025, corr(indicator_t, CR_t+1) 0.07, mean CR_t+1 99.62 when positive vs 100.08, mean indicator +0.0100
+figure written: figS1_price_index.png
+
+==============================================================================
+REAL-TIME CHECK B: REGIME MODEL, FILTERED PROBABILITIES, EXPANDING WINDOW (Table 8, panel B)
+==============================================================================
+p = 0.900: n = 15, expected exceedances 1.50; adjusted 1 (mean charge 4.73), static 0 (mean charge 9.80)
+p = 0.950: n = 15, expected exceedances 0.75; adjusted 1 (mean charge 6.26), static 0 (mean charge 11.84)
+p = 0.995: n = 15, expected exceedances 0.08; adjusted 0 (mean charge 11.76), static 0 (mean charge 17.08)
+year-by-year at 99.5%: 2011 adj 9.4 static 19.5; 2012 adj 17.6 static 19.3; 2013 adj 16.3 static 18.7; 2014 adj 13.7 static 18.4; 2015 adj 13.2 static 18.1; 2016 adj 11.8 static 17.7; 2017 adj 11.4 static 17.3; 2018 adj 13.9 static 17.0; 2019 adj 11.6 static 16.6; 2020 adj 10.6 static 16.3; 2021 adj 9.6 static 16.0; 2022 adj 9.0 static 15.7; 2023 adj 9.9 static 15.4; 2024 adj 9.7 static 15.2; 2025 adj 8.7 static 15.0
+corr(charge, CR-100) at 99.5%: adjusted -0.04, static 0.40
+
+full run complete (368s)

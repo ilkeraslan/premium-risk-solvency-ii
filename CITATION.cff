@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: "Data and code for: Underwriting cycles and the calibration of premium risk under Solvency II"
+type: software
+authors:
+  - family-names: Aslan
+    given-names: Ilker
+    orcid: "https://orcid.org/0000-0001-9241-9420"
+    affiliation: "Kalaidos University of Applied Sciences"
+license: MIT
+repository-code: "https://github.com/ilkeraslan/"
+keywords:
+  - Solvency II
+  - premium risk
+  - underwriting cycle
+  - Markov switching
+  - non-life insurance
+  - capital requirements
+preferred-citation:
+  type: report
+  title: "Underwriting cycles and the calibration of premium risk under Solvency II"
+  authors:
+    - family-names: Aslan
+      given-names: Ilker
+      orcid: "https://orcid.org/0000-0001-9241-9420"
+      affiliation: "Kalaidos University of Applied Sciences"
+
+  institution:
+    name: "SSRN"
+  year: 2026
+  doi: "10.2139/ssrn.7127360"
+  url: "https://ssrn.com/abstract=7127360"
